@@ -1,6 +1,6 @@
 # battlesnake-python
 
-A simple [BattleSnake AI](http://battlesnake.io) written in Python. 
+A simple [BattleSnake AI](http://battlesnake.io) written in Python by Michael Reiter, Erik Reppel, Spencer Vatrt-Watts and Kelt Rycroft.
 
 Visit [battlesnake.io/readme](http://battlesnake.io/readme) for API documentation and instructions for running your AI.
 
