@@ -27,7 +27,7 @@ def index():
 def start():
     data = bottle.request.json
 
-    # TODO: Do things with data
+    global board = Board(data.width, data.height, data.turn, len(data.snakes), data.food, data.walls, data.gold)
 
     return {
         'taunt': 'battlesnake-python!'
@@ -38,7 +38,8 @@ def start():
 def move():
     data = bottle.request.json
 
-    # TODO: Do things with data
+    # TODO: Each turn update the internal board
+    
 
     return {
         'move': 'south',
