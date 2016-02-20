@@ -6,7 +6,7 @@ class Board:
         self.width = data.width
         self.height = data.height
         self.turn = data.turn
-        self.number_of_snakes = data.number_of_snakes
+        self.number_of_snakes = len(data.snakes)
         self.food = data.food
         self.walls = data.walls
         self.gold = data.gold
