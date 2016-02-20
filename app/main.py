@@ -33,7 +33,7 @@ def start():
     data = bottle.request.json
 
     return {
-        'taunt': 'Yeezy taught me'
+        'taunt': 'Keitse taught me'
     }
 
 
