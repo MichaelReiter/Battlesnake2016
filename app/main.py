@@ -30,7 +30,7 @@ def start():
     # TODO: Do things with data
 
     return {
-        'taunt': 'battlesnake-python!'
+        'taunt': 'Yeezy taught me'
     }
 
 
