@@ -33,7 +33,7 @@ def start():
     data = bottle.request.json
     # global snake
     global board
-    board = board.start(data)
+    board.start(data)
 
 
     print board.width, board.height
