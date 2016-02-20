@@ -47,6 +47,7 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
+    global moves
     moves.enqueue("east")
 
     # board.update(data)
