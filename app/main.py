@@ -38,7 +38,7 @@ def move():
     data = bottle.request.json
 
     board = Board().initialize(data)
-    for s in data.snakes:
+    for s in data["snakes"]:
         if s.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
             snake = Snake.start(s)
 

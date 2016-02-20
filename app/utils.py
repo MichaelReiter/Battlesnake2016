@@ -37,7 +37,7 @@ def direct_move_to(snake, location, queue):
     x = location[0]
     y = location[1]
 
-    if abs(x) < abs(y):
+    if abs(x) <= abs(y):
         if y >= 0:
             return 'north'
 
