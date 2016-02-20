@@ -17,5 +17,3 @@ class Board:
         self.food = data.food
         self.walls = data.walls
         self.gold = data.gold
-
-    
