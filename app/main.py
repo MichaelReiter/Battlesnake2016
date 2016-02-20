@@ -1,13 +1,13 @@
 import bottle
 import os
-# from board import Board
-# from snake import Snake
+from board import Board
+from snake import Snake
 from queue import Queue
 # import utils
 
 moves = Queue()
-# board = Board()
-# snake = None
+board = Board()
+snake = Snake()
 
 
 @bottle.route('/static/<path:path>')
@@ -31,10 +31,11 @@ def index():
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-    # global board
-    # board = Board.start(data)
-    # global snake
+    global board
+    board = Board.start(data)
+    global snake
 
+    print board.width, board.height
     # for s in data.snakes:
     #     if s.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
     #         snake = Snake.start(s)
