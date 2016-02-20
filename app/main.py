@@ -31,19 +31,6 @@ def index():
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-    # global snake
-
-    print data
-
-    global board
-    # board.width = 20
-    board.initialize(data)
-
-
-    print board.width, board.height
-    # for s in data.snakes:
-    #     if s.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
-    #         snake = Snake.start(s)
 
     return {
         'taunt': 'Yeezy taught me'
@@ -53,14 +40,8 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-    global moves
-    moves.enqueue("west")
-    move = moves.dequeue()
 
-    # board.update(data)
-
-    # if moves.isEmpty():
-    #     utils.move_to_food(board, snake, moves)
+    move = 'west'
 
     return {
         'move': move,
@@ -71,8 +52,6 @@ def move():
 @bottle.post('/end')
 def end():
     data = bottle.request.json
-
-    # TODO: Do things with data
 
     return {
         'taunt': 'end'
