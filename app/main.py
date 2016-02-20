@@ -5,14 +5,6 @@ from board import Board, update_board
 from queue import Queue
 # import utils
 
-import logging
-
-logger = logging.getLogger()
-
-moves = Queue()
-board = Board()
-# snake = Snake()
-
 
 @bottle.route('/static/<path:path>')
 def static(path):
@@ -36,8 +28,17 @@ def index():
 def start():
     data = bottle.request.json
     # global snake
+
+    print data
+
     global board
+<<<<<<< HEAD
     board.start(data)
+=======
+    # board.width = 20
+    board.initialize(data)
+
+>>>>>>> e3373bcf52b893840317d65738e6ae373158969a
 
     # print board.width, board.height
     # for s in data.snakes:
