@@ -6,8 +6,8 @@ from queue import Queue
 import utils
 
 moves = Queue()
-board = Board()
-snake = None
+# board = Board()
+# snake = None
 
 
 @bottle.route('/static/<path:path>')
@@ -31,13 +31,13 @@ def index():
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-    global board
-    board = Board.start(data)
-    global snake
+    # global board
+    # board = Board.start(data)
+    # global snake
 
-    for s in data.snakes:
-        if s.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
-            snake = Snake.start(s)
+    # for s in data.snakes:
+    #     if s.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
+    #         snake = Snake.start(s)
 
     return {
         'taunt': 'Yeezy taught me'
@@ -47,11 +47,12 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
+    moves.enqueue("east")
 
-    board.update(data)
+    # board.update(data)
 
-    if moves.isEmpty():
-        utils.move_to_food(board, snake, moves)
+    # if moves.isEmpty():
+    #     utils.move_to_food(board, snake, moves)
 
     return {
         'move': moves.dequeue(),
