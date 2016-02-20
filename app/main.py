@@ -39,7 +39,7 @@ def move():
     data = bottle.request.json
 
     # TODO: Each turn update the internal board
-    
+    board.update(data)
 
     return {
         'move': 'south',
