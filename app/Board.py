@@ -7,3 +7,12 @@ class Board:
         self.food = food
         self.walls = walls
         self.gold = gold
+
+    def update(self, data):
+        self.turn += 1
+        self.number_of_snakes = len(data.snakes)
+        self.food = data.food
+        self.walls = data.walls
+        self.gold = data.gold
+
+    
