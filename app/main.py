@@ -38,7 +38,7 @@ def move():
     # TODO: Do things with data
 
     return {
-        'move': 'north',
+        'move': 'south',
         'taunt': 'battlesnake-python!'
     }
 
