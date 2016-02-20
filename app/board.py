@@ -8,7 +8,8 @@ class Board:
         self.walls = None
         self.gold = None
 
-    def start(self, data):
+    def initialize(self, data):
+        print data
         self.width = data["width"]
         self.height = data["height"]
         self.turn = data["turn"]
