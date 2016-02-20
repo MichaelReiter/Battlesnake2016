@@ -1,5 +1,8 @@
 import bottle
 import os
+from queue import Queue
+
+move = Queue()
 
 
 @bottle.route('/static/<path:path>')
