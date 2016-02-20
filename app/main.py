@@ -47,8 +47,8 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-    global moves
-    moves.enqueue("east")
+    # global moves
+    # moves.enqueue("east")
 
     # board.update(data)
 
@@ -56,7 +56,7 @@ def move():
     #     utils.move_to_food(board, snake, moves)
 
     return {
-        'move': moves.dequeue(),
+        'move': "east",
         'taunt': 'move'
     }
 
