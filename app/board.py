@@ -5,9 +5,8 @@ class Board:
         self.turn = None
         self.number_of_snakes = None
         self.food = None
-        if "walls" in data.keys():
-            self.walls = None
-            self.gold = None
+        self.walls = None
+        self.gold = None
 
     def initialize(self, data):
         print data
