@@ -1,5 +1,9 @@
 class Snake:
-    def __init__(self, x, y):
-        self.id = "340c4aca-4a65-4bb1-9009-8dccd6602d14"
-        self.x = x
-        self.y = y
+    def __init__(self, snake):
+        self.id = snake.id
+        self.coords = snake.coords
+        self.x = self.coords[0][0]
+        self.y = self.coords[0][1]
+        self.age = snake.age
+        self.health = snake.health
+        
