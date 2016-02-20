@@ -6,7 +6,7 @@ from queue import Queue
 import utils
 
 moves = Queue()
-board = None
+board = Board()
 snake = None
 
 
@@ -32,12 +32,12 @@ def index():
 def start():
     data = bottle.request.json
     global board
+    board = Board.start(data)
     global snake
-    board = Board(data)
 
     for s in data.snakes:
         if s.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
-            snake = Snake(s)
+            snake = Snake.start(s)
 
     return {
         'taunt': 'Yeezy taught me'

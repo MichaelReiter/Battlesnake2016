@@ -1,5 +1,8 @@
 class Board:
-    def __init__(self, data):
+    def __init__(self):
+        pass
+
+    def start(self, data):
         self.width = data.width
         self.height = data.height
         self.turn = data.turn
