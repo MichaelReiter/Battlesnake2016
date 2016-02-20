@@ -17,13 +17,13 @@ def static(path):
 
 @bottle.get('/')
 def index():
-    head_url = '%s://%s/static/keltsnake.jpg' % (
+    head_url = '%s://%s/static/yeezus.jpg' % (
         bottle.request.urlparts.scheme,
         bottle.request.urlparts.netloc
     )
 
     return {
-        'color': '#00ff00',
+        'color': '#b36c42',
         'head': head_url
     }
 
