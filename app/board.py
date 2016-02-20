@@ -1,4 +1,4 @@
-class Board:
+class Board(object):
     def __init__(self):
         self.width = None
         self.height = None
