@@ -1,5 +1,7 @@
 import bottle
 import os
+from board import Board
+from snake import Snake
 from queue import Queue
 
 move = Queue()
@@ -27,7 +29,7 @@ def index():
 def start():
     data = bottle.request.json
 
-    global board = Board(data.width, data.height, data.turn, len(data.snakes), data.food, data.walls, data.gold)
+    global board = Board(data)
 
     return {
         'taunt': 'Yeezy taught me'
@@ -38,12 +40,11 @@ def start():
 def move():
     data = bottle.request.json
 
-    # TODO: Each turn update the internal board
     board.update(data)
 
     return {
         'move': 'south',
-        'taunt': 'battlesnake-python!'
+        'taunt': 'move'
     }
 
 
@@ -54,7 +55,7 @@ def end():
     # TODO: Do things with data
 
     return {
-        'taunt': 'battlesnake-python!'
+        'taunt': 'end'
     }
 
 
