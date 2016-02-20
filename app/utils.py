@@ -1,6 +1,5 @@
 # def find_food(snake, board):
 
-
 def move_to_food(board, snake):
     location = closest_food(board, snake)
     return direct_move_to(snake, location)
@@ -40,7 +39,7 @@ def direct_move_to(snake, location, queue):
 
     if abs(x) < abs(y):
         if y >= 0:
-        return 'north'
+            return 'north'
 
         elif y < 0:
             return 'south'
@@ -51,5 +50,3 @@ def direct_move_to(snake, location, queue):
 
         elif x < 0:
             return 'east'
-
-    
