@@ -1,7 +1,13 @@
 # def find_food(snake, board):
 
+def move_to_food(board, snake):
+    distance = closest_food(board, snake)
+
 
 def closest_food(board, snake):
+    """
+    Takes 
+    """
     if len(board.food) == 0:
         return None
 
@@ -20,3 +26,6 @@ def closest_food(board, snake):
     y_dist = closest_food[1] - snake.y
 
     return [x_dist, y_dist]
+
+
+# def move_to(snake, )
