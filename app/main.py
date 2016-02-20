@@ -36,8 +36,8 @@ def start():
     print data
 
     global board
-    board.width = 20
-    # board.start(data)
+    # board.width = 20
+    board.start(data)
 
 
     print board.width, board.height
