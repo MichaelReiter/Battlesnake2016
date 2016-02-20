@@ -32,8 +32,12 @@ def index():
 def start():
     data = bottle.request.json
     # global snake
+
+    print data
+
     global board
-    board.start(data)
+    board.width = 20
+    # board.start(data)
 
 
     print board.width, board.height

@@ -1,6 +1,12 @@
 class Board:
     def __init__(self):
-        pass
+        self.width = None
+        self.height = None
+        self.turn = None
+        self.number_of_snakes = None
+        self.food = None
+        self.walls = None
+        self.gold = None
 
     def start(self, data):
         self.width = data["width"]
