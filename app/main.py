@@ -30,7 +30,7 @@ def start():
     global board = Board(data.width, data.height, data.turn, len(data.snakes), data.food, data.walls, data.gold)
 
     return {
-        'taunt': 'battlesnake-python!'
+        'taunt': 'Yeezy taught me'
     }
 
 
