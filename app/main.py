@@ -13,7 +13,7 @@ def static(path):
 
 @bottle.get('/')
 def index():
-    head_url = '%s://%s/static/yeezus.jpg' % (
+    head_url = '%s://%s/static/yeezus.png' % (
         bottle.request.urlparts.scheme,
         bottle.request.urlparts.netloc
     )
@@ -39,7 +39,7 @@ def move():
 
     board = Board().initialize(data)
     for s in data["snakes"]:
-        if s.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
+        if s["id"] == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
             snake = Snake.start(s)
 
     move = utils.move_to_food(board, snake)
