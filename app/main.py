@@ -1,9 +1,9 @@
 import bottle
 import os
-from board import Board
-from snake import Snake
-from queue import Queue
-import utils
+# from board import Board
+# from snake import Snake
+# from queue import Queue
+# import utils
 
 moves = Queue()
 # board = Board()
