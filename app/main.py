@@ -31,11 +31,13 @@ def index():
 @bottle.post('/start')
 def start():
     data = bottle.request.json
+    global board
+    global snake
     board = Board(data)
 
-    for snake in data.snakes:
-        if snake.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
-            snake = Snake(snake)
+    for s in data.snakes:
+        if s.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
+            snake = Snake(s)
 
     return {
         'taunt': 'Yeezy taught me'
