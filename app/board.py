@@ -5,8 +5,9 @@ class Board:
         self.turn = None
         self.number_of_snakes = None
         self.food = None
-        self.walls = None
-        self.gold = None
+        if "walls" in data.keys():
+            self.walls = None
+            self.gold = None
 
     def initialize(self, data):
         print data
@@ -15,8 +16,9 @@ class Board:
         self.turn = data["turn"]
         self.number_of_snakes = len(data["snakes"])
         self.food = data["food"]
-        self.walls = data["walls"]
-        self.gold = data["gold"]
+        if "walls" in data.keys():
+            self.walls = data["walls"]
+            self.gold = data["gold"]
 
     def update(self, data):
         self.turn += 1
