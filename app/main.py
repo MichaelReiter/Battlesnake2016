@@ -5,7 +5,7 @@ import os
 # from queue import Queue
 # import utils
 
-moves = Queue()
+# moves = Queue()
 # board = Board()
 # snake = None
 
