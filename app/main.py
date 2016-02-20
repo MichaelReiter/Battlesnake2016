@@ -1,9 +1,9 @@
 import bottle
 import os
-from board import Board, update_board
+from board import Board
 # from snake import Snake
 from queue import Queue
-# import utils
+import utils
 
 
 @bottle.route('/static/<path:path>')
@@ -27,23 +27,6 @@ def index():
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-    # global snake
-
-    print data
-
-    global board
-<<<<<<< HEAD
-    board.start(data)
-=======
-    # board.width = 20
-    board.initialize(data)
-
->>>>>>> e3373bcf52b893840317d65738e6ae373158969a
-
-    # print board.width, board.height
-    # for s in data.snakes:
-    #     if s.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
-    #         snake = Snake.start(s)
 
     return {
         'taunt': 'Yeezy taught me'
@@ -53,14 +36,12 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-    global moves
-    moves.enqueue("west")
-    move = moves.dequeue()
+    board = Board().initialize(data)
+    for s in data.snakes:
+        if s.id == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
+            snake = Snake.start(s)
 
-    # board.update(data)
-
-    # if moves.isEmpty():
-    #     utils.move_to_food(board, snake, moves)
+    move = utils.move_to_food(board, snake)
 
     return {
         'move': move,
