@@ -19,3 +19,5 @@ data = {
 }
 
 print requests.post(url + 'move', data=data)
+
+print requests.post(url + 'start', data=data)
