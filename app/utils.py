@@ -1,12 +1,15 @@
 # def find_food(snake, board):
 
-def move_to_food(board, snake):
-    distance = closest_food(board, snake)
+
+def move_to_food(board, snake, queue):
+    location = closest_food(board, snake)
+    direct_move_to(snake, location, queue)
 
 
 def closest_food(board, snake):
     """
-    Takes 
+    Takes a board and snake, calculates which food is the closest and provides
+    the distance.
     """
     if len(board.food) == 0:
         return None
@@ -28,4 +31,22 @@ def closest_food(board, snake):
     return [x_dist, y_dist]
 
 
-# def move_to(snake, )
+def direct_move_to(snake, location, queue):
+    """
+    Queues the moves to move to a location.
+    """
+    if snake.x >= 0:
+        for m in range(snake.x):
+            queue.enqueue('west')
+
+    elif snake.x < 0:
+        for m in range(abs(snake.x)):
+            queue.enqueue('east')
+
+    if snake.y >= 0:
+        for m in range(snake.y):
+            queue.enqueue('north')
+
+    elif snake.y < 0:
+        for m in range(abs(snake.y)):
+            queue.enqueue('south')
