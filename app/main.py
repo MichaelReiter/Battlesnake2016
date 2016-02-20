@@ -2,10 +2,10 @@ import bottle
 import os
 # from board import Board
 # from snake import Snake
-# from queue import Queue
+from queue import Queue
 # import utils
 
-# moves = Queue()
+moves = Queue()
 # board = Board()
 # snake = None
 
@@ -47,8 +47,9 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-    # global moves
-    # moves.enqueue("east")
+    global moves
+    moves.enqueue("west")
+    move = moves.dequeue()
 
     # board.update(data)
 
@@ -56,7 +57,7 @@ def move():
     #     utils.move_to_food(board, snake, moves)
 
     return {
-        'move': "east",
+        'move': move,
         'taunt': 'move'
     }
 
