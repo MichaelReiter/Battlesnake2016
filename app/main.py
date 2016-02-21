@@ -33,12 +33,11 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-
-    if health <= 100:
-        for s in data["snakes"]:
-            if s["id"] == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
-                snake = s
+    for s in data["snakes"]:
+        if s["id"] == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
+            snake = s
         food = data['food']
+    if snake['health'] <= 100:
         move = utils.move_to_food(food, snake)
     else:
         turn = data['turn']
