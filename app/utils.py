@@ -22,6 +22,7 @@ def closest_food(food, snake):
     x_dist = closest_food[0] - snake['coords'][0][0]
     y_dist = closest_food[1] - snake['coords'][0][1]
 
+    print "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
     print x_dist, y_dist
     return [x_dist, y_dist]
 
