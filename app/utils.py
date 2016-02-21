@@ -1,34 +1,26 @@
-# def find_food(snake, board):
-
 def move_to_food(board, snake):
-    if board and snake:
-        location = closest_food(board, snake)
-        return direct_move_to(snake, location)
-    else:
-        print "oh no. oh shit. oh GOD"
-    return "west"
+    location = closest_food(board, snake)
+    return direct_move_to(snake, location)
 
-def closest_food(board, snake):
+
+def closest_food(food, snake):
     """
     Takes a board and snake, calculates which food is the closest and provides
     the distance.
     """
-    if len(board.food) == 0:
-        return None
-
     dist_to_food = 100000
     closest_food = [0, 0]
-    for item in board.food:
-        x = snake.x - item[0]
-        y = snake.y - item[1]
+    for item in food:
+        x = snake['coords'][0][0] - item[0]
+        y = snake['coords'][0][1] - item[1]
 
         sum_squared = x**2 + y**2
         if sum_squared < dist_to_food:
             dist_to_food = sum_squared
             closest_food = [x, y]
 
-    x_dist = closest_food[0] - snake.x
-    y_dist = closest_food[1] - snake.y
+    x_dist = closest_food[0] - snake['coords'][0][0]
+    y_dist = closest_food[1] - snake['coords'][0][1]
 
     return [x_dist, y_dist]
 
