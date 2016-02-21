@@ -41,7 +41,7 @@ def direct_move_to(snake, location):
     y = food_y - snake_y
 
     print '\n\n\n\n\n'
-    print x, y
+    print 'x', 'y', x, y
 
     if x != 0:
         if x < 0:
