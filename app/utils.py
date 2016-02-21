@@ -43,14 +43,14 @@ def direct_move_to(snake, location):
     print '\n\n\n\n\n'
     print x, y
 
-    if x is not 0:
-        if x > 0:
+    if x != 0:
+        if x < 0:
             return 'west'
         else:
             return 'east'
 
-    if y is not 0:
-        if x > 0:
+    if y != 0:
+        if y < 0:
             return 'north'
         else:
             return 'south'
