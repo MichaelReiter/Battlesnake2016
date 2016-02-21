@@ -31,16 +31,19 @@ def direct_move_to(snake, location):
     """
     Queues the moves to move to a location.
     """
+    print '\n\n\n\n\n'
     food_x = location[0]
     food_y = location[1]
+    print 'food_x', food_x, 'food_y', food_y
 
     snake_x = snake['coords'][0][0]
     snake_y = snake['coords'][0][1]
+    print 'snake x', snake_x, 'snake_y', snake_y
 
     x = food_x - snake_x
     y = food_y - snake_y
 
-    print '\n\n\n\n\n'
+    
     print 'x', 'y', x, y
 
     if x != 0:
