@@ -55,4 +55,46 @@ def direct_move_to(snake, location):
         else:
             return 'east'
 
-    
+
+def collision(move, snake, data):
+    direction = {"north": -1,
+                 "south": 1,
+                 "east": 1,
+                 "west": -1}
+    amount = direction[move]
+
+    current_pos = snake['coords'][0]
+
+    occupied_positions = snake['coords'][1:]
+    for s in data['snakes']:
+        for c in s['coords']:
+            occupied_positions.append(c)
+    for w in data['walls']:
+        occupied_positions.append(w)
+
+    for w in data['width']:
+        occupied_positions.append(w, 0)
+        occupied_positions.append(w, data['height']) 
+
+    for h in data['height']:
+        occupied_positions.append(0, h)
+        occupied_positions.append(data['width'], h)
+
+    if move in ['north', 'south']:
+        for pos in occupied_positions:
+            if (current_pos[1] + amount) == pos:
+                return True
+
+    if move in ['east', 'west']:
+        for pos in occupied_positions:
+            if (current_pos[0] + amount) == pos:
+                return True
+
+    else:
+        return False
+
+def calc_move(move, snake, data):
+    posibilites = ['north', 'east', 'south', 'west']
+    for p in posibilites:
+        if not collision:
+            return p

@@ -51,6 +51,9 @@ def move():
         elif turn % 4 is 3:
             move = 'west'
 
+    if utils.collision(move, snake, data):
+        move = utils.calc_move(move, snake, data)
+
     return {
         'move': move,
         'taunt': 'move'
