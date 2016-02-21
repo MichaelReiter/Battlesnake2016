@@ -1,8 +1,5 @@
 import bottle
 import os
-from board import Board
-from snake import Snake
-from queue import Queue
 import utils
 
 
@@ -37,15 +34,22 @@ def start():
 def move():
     data = bottle.request.json
 
-    turn = data['turn']
-    if turn % 4 is 0:
-        move = 'north'
-    elif turn % 4 is 1:
-        move = 'east'
-    elif turn % 4 is 2:
-        move = 'south'
-    elif turn % 4 is 3:
-        move = 'west'
+    if health <= 100:
+        for s in data["snakes"]:
+            if s["id"] == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
+                snake = s
+        food = data['food']
+        move = utils.move_to_food(food, snake)
+    else:
+        turn = data['turn']
+        if turn % 4 is 0:
+            move = 'north'
+        elif turn % 4 is 1:
+            move = 'east'
+        elif turn % 4 is 2:
+            move = 'south'
+        elif turn % 4 is 3:
+            move = 'west'
 
     return {
         'move': move,
