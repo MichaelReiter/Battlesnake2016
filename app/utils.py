@@ -30,7 +30,7 @@ def closest_food(board, snake):
     return [x_dist, y_dist]
 
 
-def direct_move_to(snake, location, queue):
+def direct_move_to(snake, location):
     """
     Queues the moves to move to a location.
     """
