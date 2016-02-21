@@ -42,17 +42,27 @@ def move():
     else:
         # all glory to loop snake
         turn = data['turn']
-        if turn % 8 is 0 or turn % 8 is 1:
-            move = 'north'
-        elif turn % 8 is 2 or turn % 8 is 3:
-            move = 'east'
-        elif turn % 8 is 4 or turn % 8 is 5:
-            move = 'south'
-        elif turn % 8 is 6 or turn % 8 is 7:
-            move = 'west'
+        if turn < 80:
+            if turn % 4 is 0:
+                move = 'north'
+            elif turn % 4 is 1:
+                move = 'east'
+            elif turn % 4 is 2:
+                move = 'south'
+            elif turn % 4 is 3:
+                move = 'west'
+        else:
+            if turn % 8 is 0 or turn % 8 is 1:
+                move = 'north'
+            elif turn % 8 is 2 or turn % 8 is 3:
+                move = 'east'
+            elif turn % 8 is 4 or turn % 8 is 5:
+                move = 'south'
+            elif turn % 8 is 6 or turn % 8 is 7:
+                move = 'west'
 
-    if utils.collision(move, snake, data):
-        move = utils.calc_move(move, snake, data)
+    # if utils.collision(move, snake, data):
+    #     move = utils.calc_move(move, snake, data)
 
     return {
         'move': move,
