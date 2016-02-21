@@ -24,7 +24,7 @@ def closest_food(food, snake):
 
     print "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
     print x_dist, y_dist
-    return [x_dist, y_dist]
+    return closest_food
 
 
 def direct_move_to(snake, location):
