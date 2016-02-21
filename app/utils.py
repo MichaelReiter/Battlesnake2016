@@ -31,19 +31,23 @@ def direct_move_to(snake, location):
     """
     Queues the moves to move to a location.
     """
-    x = location[0]
-    y = location[1]
+    food_x = location[0]
+    food_y = location[1]
 
-    if abs(x) <= abs(y):
-        if y >= 0:
-            return 'north'
+    snake_x = snake['coords'][0][0]
+    snake_y = snake['coords'][0][1]
 
-        elif y < 0:
-            return 'south'
+    x = food_x - snake_x
+    y = food_y - snake_y
 
-    if abs(x) > abs(y):
-        if x >= 0:
+    if x is not 0:
+        if x < 0:
             return 'west'
-
-        elif x < 0:
+        else:
             return 'east'
+
+    if y is not 0:
+        if x < 0:
+            return 'north'
+        else:
+            return 'south'
