@@ -40,6 +40,9 @@ def direct_move_to(snake, location):
     x = food_x - snake_x
     y = food_y - snake_y
 
+    print '\n\n\n\n\n'
+    print x, y
+
     if x is not 0:
         if x > 0:
             return 'west'
