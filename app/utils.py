@@ -17,7 +17,7 @@ def closest_food(food, snake):
         sum_squared = x**2 + y**2
         if sum_squared < dist_to_food:
             dist_to_food = sum_squared
-            nearest_food = [x, y]
+            nearest_food = item
 
     print '\n\n\n\n nearest_food', nearest_food
 
