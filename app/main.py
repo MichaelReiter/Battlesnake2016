@@ -38,13 +38,13 @@ def move():
     data = bottle.request.json
 
     turn = data['turn']
-    if turn % 8 is 0:
+    if turn % 4 is 0:
         move = 'north'
-    elif turn % 8 is 1:
+    elif turn % 4 is 1:
         move = 'east'
-    elif turn % 8 is 2:
+    elif turn % 4 is 2:
         move = 'south'
-    elif turn % 8 is 3:
+    elif turn % 4 is 3:
         move = 'west'
 
     return {
