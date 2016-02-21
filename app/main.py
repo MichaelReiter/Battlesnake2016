@@ -51,6 +51,9 @@ def move():
         elif turn % 8 is 6 or turn % 8 is 7:
             move = 'west'
 
+    if utils.collision(move, snake, data):
+        move = utils.calc_move(move, snake, data)
+
     return {
         'move': move,
         'taunt': 'move'
