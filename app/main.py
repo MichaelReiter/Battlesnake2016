@@ -37,17 +37,8 @@ def start():
 def move():
     data = bottle.request.json
 
-    board = Board()
-    board.initialize(data)
-    for s in data["snakes"]:
-        if s["id"] == "340c4aca-4a65-4bb1-9009-8dccd6602d14":
-            snake = Snake()
-            snake.start(s)
-
-    move = utils.move_to_food(board, snake)
-
     return {
-        'move': move,
+        'move': 'west',
         'taunt': 'move'
     }
 
