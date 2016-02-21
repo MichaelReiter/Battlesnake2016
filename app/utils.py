@@ -1,9 +1,12 @@
 # def find_food(snake, board):
 
 def move_to_food(board, snake):
-    location = closest_food(board, snake)
-    return direct_move_to(snake, location)
-
+    if board and snake:
+        location = closest_food(board, snake)
+        return direct_move_to(snake, location)
+    else:
+        print "oh no. oh shit. oh GOD"
+    return "west"
 
 def closest_food(board, snake):
     """
