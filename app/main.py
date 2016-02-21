@@ -40,6 +40,7 @@ def move():
     if snake['health'] <= 100:
         move = utils.move_to_food(food, snake)
     else:
+        # all glory to loop snake
         turn = data['turn']
         if turn % 4 is 0:
             move = 'north'
